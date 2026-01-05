@@ -5,10 +5,7 @@ import socket
 import struct
 
 
-FAILED = 1
-
-
-def send_data(server_ip: str, server_port: int, data: str):
+def send_data(server_ip: str, server_port: int, data: str) -> None:
     """
     Send data to server in address (server_ip, server_port).
     """

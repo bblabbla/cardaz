@@ -5,10 +5,9 @@ import socket
 import struct
 
 LITTLE_ENDIAN_LEN_SIZE = 4
-FAILED = 1
 
 
-def get_massage(client_socket: socket):
+def get_massage(client_socket: socket) -> None:
     packed = recv_exact(client_socket, LITTLE_ENDIAN_LEN_SIZE)
     if not packed:
         return
@@ -59,7 +58,7 @@ def main():
         run_server(args.ip, args.port)
     except Exception as error:
         print(f"ERROR: {error}")
-        return FAILED
+        return 1
 
 
 if __name__ == "__main__":
